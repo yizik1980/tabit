@@ -9,6 +9,7 @@ import bowlingFrame from 'src/app/model/bowlingFrame';
 export class FrameBoardComponent implements OnInit {
   @Input()
   board:bowlingFrame;
+  
   constructor() { }
 
   ngOnInit(): void {

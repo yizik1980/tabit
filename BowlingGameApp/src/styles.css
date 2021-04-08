@@ -17,3 +17,23 @@
 .mr-l {
     margin-right: 2%;
 }
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.bottom {
+    bottom: 2%;
+}
+
+.right {
+    right: 2%
+}
+
+.left {
+    left: 2%;
+}

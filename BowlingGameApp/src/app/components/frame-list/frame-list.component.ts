@@ -12,7 +12,7 @@ export class FrameListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.boards = new bowlingTenRounds();
+    this.boards = new bowlingTenRounds(10);
   }
   throwBall(){
     this.boards.throwBall();

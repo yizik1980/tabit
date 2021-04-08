@@ -1,12 +1,13 @@
 <aside>
     <div class="board mr-l" *ngIf="board">
-        <div class="top cube justify-center ">
+        <div class="top cube justify-center relative ">
             <div class="flex">
-                <div class="small-cube"> {{board?.firstShot?.shot}}</div>
-                <div class="small-cube">{{board?.secondShot?.shot}}</div>
+                <div *ngIf="board.firstShot.isSet" class="small-cube"> {{board?.firstShot?.shot}}</div>
+                <div *ngIf="board.secondShot.isSet" class="small-cube">{{board?.secondShot?.shot}}</div>
+                <div *ngIf="board.thirdOptionalShot.shot" class="small-cube">{{board?.thirdOptionalShot?.shot}}</div>
             </div>
 
-            <div class="center">{{board?.accumaltiveScore}}</div>
+            <div *ngIf="board?.accumaltiveScore" class="bottom right absolute"> {{board?.accumaltiveScore}}</div>
 
         </div>
     </div>

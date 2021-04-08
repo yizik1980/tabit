@@ -11,9 +11,13 @@
 }
 
 .small-cube {
-    width: 42%;
-    height: 50%;
+    width: 25px;
+    height: 25px;
     border: 1px solid #289;
     margin-left: 2px;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
 }

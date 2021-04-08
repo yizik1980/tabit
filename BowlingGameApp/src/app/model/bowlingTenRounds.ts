@@ -5,16 +5,17 @@ export default class bowlingTenRounds {
     rounds: Array<bowlingFrame>;
     step = 0;
     sumResult = 0;
-    constructor() {
-        this.rounds = new Array<bowlingFrame>(9);
-        // for (let index = 0; index < 9; index++) {
-        //   this.rounds[index] = new bowlingFrame();
-        // });
+    last:number;
+    inTitledToAddtionalThrow = false;
+    setThirdShotOnce = true;
+    constructor(rounds: number) {
+        this.rounds = new Array<bowlingFrame>(rounds - 1);
+        this.last = rounds;
     }
 
 
     public get gameOn(): boolean {
-        return this.rounds.length < 10;
+        return this.step < this.last;
     }
 
     throwBall() {
@@ -25,30 +26,46 @@ export default class bowlingTenRounds {
             const currentThrow = this.rounds[this.step];
             currentThrow.throwBall();
 
-            /// elaps over first step and wether the frame have been close
-           
-            var previousThrow;
+            // Allow additional step
+            if(this.step === this.last - 1 && this.inTitledToAddtionalThrow && this.setThirdShotOnce){
+                this.setThirdShotOnce = false;
+                currentThrow.appliedThirdThrow();
+            }
+            // frame was closed
             if (currentThrow.frameHasClosed) {
-                // go to the next frame
-                
-                if(this.step > 0){
+                // last step only
+                if(this.step === this.last - 1 && this.inTitledToAddtionalThrow){
                     const previousThrow = this.rounds[this.step - 1];
-                   
+                   // sum up last result 
                     currentThrow.sumStep(previousThrow);
-                    
-                    this.sumResult =  currentThrow.bonus(previousThrow);
-                    
-                }else{
+                    this.sumResult = currentThrow.accumaltiveScore;
+                    this.step++;
+                    return;
+                }
+                // go to the next frame
+                /// elaps over first step and wether the frame have been close
+                if (this.step > 0) {
+                    const previousThrow = this.rounds[this.step - 1];
+
+                    currentThrow.sumStep(previousThrow);
+                    // return the bonus score and if among all it previous shots were spear or strike atleast once
+                     const isInTitle = currentThrow.bonus(previousThrow);
+                     this.sumResult = currentThrow.accumaltiveScore;
+                     if(isInTitle){
+                        this.inTitledToAddtionalThrow = true;
+                     }
+
+                } else {
+                    // first step
                     currentThrow.accumaltiveScore = currentThrow.currentResult;
                     this.sumResult = currentThrow.currentResult;
                 }
-                
-                console.log(this.sumResult);
+
                 this.step++;
-                
+
             }
-       
-            
+
+
         }
 
 
