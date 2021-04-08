@@ -1,0 +1,19 @@
+.cube {
+    width: 100px;
+    height: 100px;
+    padding: 3%;
+    box-shadow: 0px 0px 0px 1px #021;
+    box-sizing: border-box;
+}
+
+.flex {
+    justify-content: flex-end;
+}
+
+.small-cube {
+    width: 42%;
+    height: 50%;
+    border: 1px solid #289;
+    margin-left: 2px;
+    text-align: center;
+}

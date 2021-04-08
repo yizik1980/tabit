@@ -1,0 +1,7 @@
+<div class="frame-board ">
+    <div class="flex ">
+        <app-frame-board *ngFor="let item of boards.rounds" [board]="item" class="border  "></app-frame-board>
+    </div>
+    <div class="sum"><sup>total:</sup><span>{{boards.sumResult}}</span></div>
+    <button (click)="throwBall()" type="button">throw Ball</button>
+</div>

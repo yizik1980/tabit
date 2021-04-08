@@ -1,0 +1,15 @@
+<aside>
+    <div class="board mr-l" *ngIf="board">
+        <div class="top cube justify-center ">
+            <div class="flex">
+                <div class="small-cube"> {{board?.firstShot?.shot}}</div>
+                <div class="small-cube">{{board?.secondShot?.shot}}</div>
+            </div>
+
+            <div class="center">{{board?.accumaltiveScore}}</div>
+
+        </div>
+    </div>
+
+
+</aside>

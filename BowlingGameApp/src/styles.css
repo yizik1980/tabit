@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+
+.center {
+    text-align: center;
+}
+
+.flex {
+    display: flex;
+    flex-flow: row wrap;
+    place-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.mr-l {
+    margin-right: 2%;
+}

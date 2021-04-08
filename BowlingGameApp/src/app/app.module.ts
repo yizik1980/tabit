@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { FrameBoardComponent } from './components/frame-board/frame-board.component';
+import { FrameListComponent } from './components/frame-list/frame-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FrameBoardComponent
+    FrameBoardComponent,
+    FrameListComponent
   ],
   imports: [
     BrowserModule
