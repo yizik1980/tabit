@@ -1,5 +1,5 @@
 export  enum BowlingResultType {
     strike=1,
-    speare=2,
+    spare=2,
     plain
 }

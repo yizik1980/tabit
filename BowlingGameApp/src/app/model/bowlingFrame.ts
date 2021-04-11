@@ -8,6 +8,7 @@ export default class bowlingFrame {
     FrameType = BowlingResultType.plain;
     currentResult = 0;
     accumaltiveScore = 0;
+    name = '';
     constructor() {
         // initiating the last optional shot 
         this.thirdOptionalShot.shot = 0;
@@ -20,22 +21,25 @@ export default class bowlingFrame {
             if (result === 10) {
                 this.FrameType = BowlingResultType.strike
                 this.secondShot.shot = 0;
+                this.name = 'strike'
             }
             return result;
         }
         if (!this.secondShot.isSet) {
             const secondResult = Math.ceil(Math.random() * (11 - this.currentResult)) - 1;
-            console.log('%c' + secondResult, 'font-weight:900; color:#654; font-size:1rem');
+            // console.log('%c' + secondResult, 'font-weight:900; color:#654; font-size:1rem');
             this.secondShot.shot = secondResult;
             this.currentResult += secondResult;
             if (this.currentResult === 10) {
-                this.FrameType = BowlingResultType.speare;
+                this.FrameType = BowlingResultType.spare;
+                this.name = 'spare'
             }
             return secondResult;
         }
         if (!this.thirdOptionalShot.isSet) {
             console.log('%c Last Rewarding throw', 'font-size:2rem; color: red;');
             this.sumUpLastRewardingShot();
+            return this.thirdOptionalShot.shot;
         }
 
         return 0;
@@ -59,7 +63,7 @@ export default class bowlingFrame {
                 inTitledToAddtionalThrow = true;
                 break;
             }
-            case BowlingResultType.speare: {
+            case BowlingResultType.spare: {
                 // The bonus for that frame is the number of pins knocked down by the next roll.
                 this.accumaltiveScore += this.firstShot.shot;
                 inTitledToAddtionalThrow = true;

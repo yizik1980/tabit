@@ -1,6 +1,6 @@
 <aside>
     <div class="board mr-l" *ngIf="board">
-        <div class="top cube justify-center relative ">
+        <div class="top cube justify-center relative " *ngIf="board.accumaltiveScore">
             <div class="flex">
                 <div *ngIf="board.firstShot.isSet" class="small-cube"> {{board?.firstShot?.shot}}</div>
                 <div *ngIf="board.secondShot.isSet" class="small-cube">{{board?.secondShot?.shot}}</div>

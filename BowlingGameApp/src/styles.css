@@ -26,8 +26,16 @@
     position: absolute;
 }
 
+button {
+    cursor: pointer;
+}
+
 .bottom {
     bottom: 2%;
+}
+
+.hidden {
+    display: none;
 }
 
 .right {

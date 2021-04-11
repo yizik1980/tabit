@@ -1,4 +1,3 @@
-import { BowlingResultType } from "./bowling-result-type.enum";
 import bowlingFrame from "./bowlingFrame";
 
 export default class bowlingTenRounds {
@@ -18,13 +17,14 @@ export default class bowlingTenRounds {
         return this.step < this.last;
     }
 
-    throwBall() {
+    throwBall():number {
+        var throwResult = 0;
         if (this.gameOn) {
             if (!this.rounds[this.step]) {
                 this.rounds[this.step] = new bowlingFrame();
             }
             const currentThrow = this.rounds[this.step];
-            currentThrow.throwBall();
+            throwResult = currentThrow.throwBall();
 
             // Allow additional step
             if(this.step === this.last - 1 && this.inTitledToAddtionalThrow && this.setThirdShotOnce){
@@ -67,7 +67,7 @@ export default class bowlingTenRounds {
 
 
         }
-
+        return throwResult;
 
     }
 

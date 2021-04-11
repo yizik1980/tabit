@@ -1,0 +1,65 @@
+<div id="allthethings">
+
+    <button (click)="throwBall()" [ngClass]="{'hidden': thrown}" type="button">Throw Ball</button>
+    <div id="lines"></div>
+    <div id="allpins">
+
+        <div id="pin1" [ngClass]="{'fallen': pinHasFall>=1 }">
+            <div class="top"></div>
+            <div class="bottom"></div>
+        </div>
+
+        <div id="pin2" [ngClass]="{'fallen': pinHasFall>=2 }">
+            <div class="top"></div>
+            <div class="bottom"></div>
+        </div>
+
+        <div id="pin3" [ngClass]="{'fallen': pinHasFall>=3 }">
+            <div class="top"></div>
+            <div class="bottom"></div>
+        </div>
+
+        <div id="pin4" [ngClass]="{'fallen': pinHasFall>=4 }">
+            <div class="top"></div>
+            <div class="bottom"></div>
+        </div>
+
+        <div id="pin5" [ngClass]="{'fallen': pinHasFall>=5  }">
+            <div class="top"></div>
+            <div class="bottom"></div>
+        </div>
+
+        <div id="pin6" [ngClass]="{'fallen': pinHasFall>=6  }">
+            <div class="top"></div>
+            <div class="bottom"></div>
+        </div>
+
+        <div id="pin7" [ngClass]="{'fallen': pinHasFall>=7 }">
+            <div class="top"></div>
+            <div class="bottom"></div>
+        </div>
+
+        <div id="pin8" [ngClass]="{'fallen': pinHasFall>=8 }">
+            <div class="top"></div>
+            <div class="bottom"></div>
+        </div>
+
+        <div id="pin9" [ngClass]="{'fallen': pinHasFall>=9 }">
+            <div class="top"></div>
+            <div class="bottom"></div>
+        </div>
+
+        <div id="pin10" [ngClass]="{'fallen': pinHasFall==10 }">
+            <div class="top"></div>
+            <div class="bottom"></div>
+        </div>
+
+    </div>
+    <div id="lastball" [ngClass]="{'throw': thrown}">
+        <div id="dot1"></div>
+        <div id="dot2"></div>
+        <div id="dot3"></div>
+        <div id="ball"></div>
+    </div>
+
+</div>
