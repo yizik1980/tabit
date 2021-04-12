@@ -1,5 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import {  BehaviorSubject, Subject } from 'rxjs';
+import {   Subject } from 'rxjs';
 import bowlingFrame from '../model/bowlingFrame';
 
 
@@ -17,7 +18,6 @@ export class BowlingService {
   setThirdShotOnce = true;
   currentThrow: bowlingFrame;
   constructor() {
-    this.rounds
     this.last = 10;
   }
 
@@ -79,5 +79,8 @@ export class BowlingService {
       this.step++;
 
     }
+  }
+  saveUserScore(){
+    
   }
 }

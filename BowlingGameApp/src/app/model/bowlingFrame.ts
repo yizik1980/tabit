@@ -39,6 +39,7 @@ export default class bowlingFrame {
         if (!this.thirdOptionalShot.isSet) {
             console.log('%c Last Rewarding throw', 'font-size:2rem; color: red;');
             this.sumUpLastRewardingShot();
+            this.name = " last throw"
             return this.thirdOptionalShot.shot;
         }
 

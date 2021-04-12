@@ -4,6 +4,7 @@
             <div class="flex">
                 <div *ngIf="board.firstShot.isSet" class="small-cube"> {{board?.firstShot?.shot}}</div>
                 <div *ngIf="board.secondShot.isSet" class="small-cube">{{board?.secondShot?.shot}}</div>
+                <h5 class="absolute name" class="{{board?.name}}" *ngIf="board?.name">{{board?.name}}</h5>
                 <div *ngIf="board.thirdOptionalShot.shot" class="small-cube">{{board?.thirdOptionalShot?.shot}}</div>
             </div>
 

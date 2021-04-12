@@ -8,8 +8,8 @@
 :root {
     --blue: #1e90ff;
     --white: #ffffff;
-    --pinDelay: '21.8s';
-    --lastDalay: '22.8s';
+    --pinDelay: '21.7s';
+    --lastDalay: '22.7s';
 }
 
 p {
@@ -36,6 +36,8 @@ input {
     position: relative;
     overflow: hidden;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #lastball {
@@ -47,11 +49,12 @@ input {
     display: block;
     border-radius: 50px;
     top: 48%;
+    left: 40px;
 }
 
 #lastball.throw {
-    animation: ball 9s forwards linear;
-    -webkit-animation: ball 9s forwards linear;
+    animation: ball 7s forwards linear;
+    -webkit-animation: ball 7s forwards linear;
 }
 
 @keyframes ball {
@@ -132,23 +135,22 @@ input {
 
 #lines {
     width: 78%;
-    height: 129px;
+    height: 133px;
     background-color: transparent;
-    position: relative;
-    top: 45px;
     border-top: 5px solid #5f4c4c;
     border-bottom: 5px solid #655151;
-    display: inline-block;
+    border-right: unset;
+    border-left: unset;
 }
 
 #allpins {
     background-color: transparent;
     border: none;
     position: relative;
-    width: 200px;
-    height: 200px;
+    width: 11%;
+    height: 273px;
     display: inline-block;
-    vertical-align: top;
+    vertical-align: middle;
     overflow: hidden;
 }
 
@@ -175,8 +177,8 @@ button {
 #pin10.fallen {
     -webkit-animation: pin10 5s forwards linear;
     animation: pin10 5s forwards linear;
-    -webkit-animation-delay: 8s;
-    animation-delay: 8s;
+    -webkit-animation-delay: 7s;
+    animation-delay: 7s;
 }
 
 @keyframes pin10 {
@@ -229,8 +231,8 @@ button {
 #pin9.fallen {
     -webkit-animation: pin9 5s forwards linear;
     animation: pin9 5s forwards linear;
-    -webkit-animation-delay: 8s;
-    animation-delay: 8s;
+    -webkit-animation-delay: 7s;
+    animation-delay: 7s;
 }
 
 @keyframes pin9 {
@@ -283,8 +285,8 @@ button {
 #pin8.fallen {
     -webkit-animation: pin8 5s forwards linear;
     animation: pin8 5s forwards linear;
-    -webkit-animation-delay: 8s;
-    animation-delay: 8s;
+    -webkit-animation-delay: 7s;
+    animation-delay: 7s;
 }
 
 @keyframes pin8 {
@@ -337,8 +339,8 @@ button {
 #pin7.fallen {
     -webkit-animation: pin7 5s forwards linear;
     animation: pin7 5s forwards linear;
-    -webkit-animation-delay: 8s;
-    animation-delay: 8s;
+    -webkit-animation-delay: 7s;
+    animation-delay: 7s;
 }
 
 @keyframes pin7 {
@@ -386,8 +388,8 @@ button {
 #pin6.fallen {
     -webkit-animation: pin6 5s forwards linear;
     animation: pin6 5s forwards linear;
-    -webkit-animation-delay: 8s;
-    animation-delay: 8s;
+    -webkit-animation-delay: 7s;
+    animation-delay: 7s;
 }
 
 @keyframes pin6 {
@@ -442,8 +444,8 @@ button {
 #pin5.fallen {
     -webkit-animation: pin5 5s forwards linear;
     animation: pin5 5s forwards linear;
-    -webkit-animation-delay: 8s;
-    animation-delay: 8s;
+    -webkit-animation-delay: 7s;
+    animation-delay: 7s;
 }
 
 @keyframes pin5 {
@@ -496,8 +498,8 @@ button {
 #pin4.fallen {
     -webkit-animation: pin4 5s forwards linear;
     animation: pin4 5s forwards linear;
-    -webkit-animation-delay: 8s;
-    animation-delay: 8s;
+    -webkit-animation-delay: 7s;
+    animation-delay: 7s;
 }
 
 @keyframes pin4 {
@@ -550,8 +552,8 @@ button {
 #pin3.fallen {
     -webkit-animation: pin3 5s forwards linear;
     animation: pin3 5s forwards linear;
-    -webkit-animation-delay: 8s;
-    animation-delay: 8s;
+    -webkit-animation-delay: 7s;
+    animation-delay: 7s;
 }
 
 @keyframes pin3 {
@@ -604,8 +606,8 @@ button {
 #pin2.fallen {
     -webkit-animation: pin2 5s forwards linear;
     animation: pin2 5s forwards linear;
-    -webkit-animation-delay: 8s;
-    animation-delay: 8s;
+    -webkit-animation-delay: 7s;
+    animation-delay: 7s;
 }
 
 @keyframes pin2 {
@@ -657,8 +659,8 @@ button {
 #pin1.fallen {
     -webkit-animation: pin1 5s forwards linear;
     animation: pin1 5s forwards linear;
-    -webkit-animation-delay: 8s;
-    animation-delay: 8s;
+    -webkit-animation-delay: 7s;
+    animation-delay: 7s;
 }
 
 @keyframes pin1 {
