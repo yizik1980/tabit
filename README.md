@@ -1,4 +1,9 @@
 # tabit
+-----------------------------------------------------------
+loading the bowling app
+server folder - run "npm instll"
+BowlingGameApp folder  run clien angular depandencies 
+---------------------------------------------------------
 Bowling Game
 The game consists of 10 frames ,  In each frame the player has two opportunities to knock down 10 pins.  The score for the frame is the total number of pins knocked down, plus bonuses for strikes and spares.
  
