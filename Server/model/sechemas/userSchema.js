@@ -5,7 +5,10 @@ const userSchema = mongoose.Schema({
     name: {
         type: String,
     },
-    score: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Score' }],
+    //score: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Score' }],
+    finalScore: {
+        type: Number
+    },
     date: {
         type: String,
     },

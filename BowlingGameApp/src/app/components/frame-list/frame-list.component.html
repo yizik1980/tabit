@@ -1,4 +1,5 @@
 <div class="frame-board relative ">
+    <h2 *ngIf="bowling?.currentUser?.name">hello {{bowling?.currentUser?.name}}</h2>
     <div class="flex ">
         <app-frame-board *ngFor="let item of bowling.rounds" [board]="item" class="border  "></app-frame-board>
     </div>

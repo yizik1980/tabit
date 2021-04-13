@@ -3,21 +3,16 @@ const Score = require('../sechemas/scoreSchema');
 
 class UserDataEntity {
     constructor() {}
-    getUser(id) {
-        return User.findOne({ UserId: id }).exec();
+    getUsers() {
+        return User.find().sort({ finalScore: "descending" }).limit(5).exec();
     }
     async setUser(UserOb) {
         try {
-            const scoresEntity = new Score(UserOb.score);
-            const scoreResult = await scoresEntity.save();
-            UserOb.score = scoreResult._id;
-            console.table(scoreResult);
-            if (scoreResult._id) {
-                const UsersEntity = new User(UserOb);
-                const UserResult = await UsersEntity.save();
-                return { UserResult, scoreResult };
-            }
-            return { scoreResult };
+
+            const UsersEntity = new User(UserOb);
+            const UserResult = await UsersEntity.save();
+            return UserResult;
+            // }
         } catch (e) {
             throw new Error(e)
         }

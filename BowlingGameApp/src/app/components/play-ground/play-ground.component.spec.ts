@@ -21,5 +21,9 @@ describe('PlayGroundComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
+    for (let index = 0; index < 10; index++) {
+      component.throwBall();
+    }
+    //component.throwBall();
+;  });
 });

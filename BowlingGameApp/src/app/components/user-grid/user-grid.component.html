@@ -1,0 +1,10 @@
+<div class="grid template-three head">
+    <aside>Name</aside>
+    <aside>Score</aside>
+    <aside>Time</aside>
+</div>
+<div *ngFor="let user of usersData$ | async" class="grid template-three">
+    <aside>{{user.name}}</aside>
+    <aside>{{user.finalScore | number}}</aside>
+    <aside>{{user.date | date : 'mediumDate'}}</aside>
+</div>

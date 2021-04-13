@@ -1,0 +1,26 @@
+<div class="popup" *ngIf="dialogData?.show" [class]="{wide:dialogData?.wide}">
+    <!-- <div class="close" (click)="close()"></div> -->
+
+    <div class="container">
+        <div class="backtap"></div>
+
+        <h2 *ngIf="dialogData?.title" class="mr-b">{{dialogData?.title}}</h2>
+
+        <div>
+            <div class="dialog-model">
+                <h3 *ngIf="dialogData?.innerTitle" class="mr-b">{{dialogData?.innerTitle}}</h3>
+                <span [ngSwitch]="dialogData.componentName">
+                    <ng-template [ngSwitchCase]="'start'">
+                        <app-start (start)="dialogData.callBackDialog($event)" [name]="dialogData.text" ></app-start>
+                    </ng-template>
+                    <ng-template [ngSwitchCase]="'end'">
+                        <app-end [finalScore]="dialogData.text"></app-end>
+                    </ng-template>
+                <p *ngSwitchDefault>
+                
+                </p>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

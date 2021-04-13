@@ -1,15 +1,18 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import {   Subject } from 'rxjs';
+import { Subject } from 'rxjs';
 import bowlingFrame from '../model/bowlingFrame';
+import UserScore from '../model/UserScore';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class BowlingService {
+  currentUser: UserScore;
   subjectTriggerThrow = new Subject<number>();
-  subjectEndThrow = new Subject<{thrown:boolean, frameClosed:boolean }>();
+  subjectEndThrow = new Subject<{ thrown: boolean, frameClosed: boolean }>();
+  EndGame = new Subject<UserScore>();
   public rounds = new Array<bowlingFrame>(9);
   step = 0;
   sumResult = 0;
@@ -23,7 +26,7 @@ export class BowlingService {
 
 
   public get gameOn(): boolean {
-    return this.step < this.last;
+    return this.step <= this.last;
   }
 
   throwBall(): number {
@@ -33,9 +36,13 @@ export class BowlingService {
         this.rounds[this.step] = new bowlingFrame();
       }
       this.currentThrow = this.rounds[this.step];
-     throwResult =  this.currentThrow.throwBall();
+      throwResult = this.currentThrow.throwBall();
+      // not relevent action 
+      this.currentUser.addScore(throwResult);
+      //
+      console.table(this.currentUser);
       this.subjectTriggerThrow.next(throwResult);
-    }
+    } 
     return throwResult;
 
   }
@@ -54,12 +61,15 @@ export class BowlingService {
         this.currentThrow.sumStep(previousThrow);
         this.sumResult = this.currentThrow.accumaltiveScore;
         this.step++;
+        if (this.gameOn) {
+          this.currentUser.finalScore = this.currentThrow.accumaltiveScore;
+          this.EndGame.next(this.currentUser);
+        }
         return;
       }
       // go to the next frame
       /// elaps over first step and wether the frame have been close
       if (this.step > 0) {
-        debugger;
         const previousThrow = this.rounds[this.step - 1];
 
         this.currentThrow.sumStep(previousThrow);
@@ -79,8 +89,5 @@ export class BowlingService {
       this.step++;
 
     }
-  }
-  saveUserScore(){
-    
   }
 }
